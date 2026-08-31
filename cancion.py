@@ -61,7 +61,7 @@ class Linked_list:
         position = 0
 
         while current is not None:
-            if (current.data[0].lower() == titulo.lower()):
+            if (current.data[0].lower() == titulo.lower() or current.data[1].lower() == titulo.lower()):
                 print("*********")
                 print(f"Cancion encontrada en posicion {position}")
                 print(f"Titulo: {current.data[0]}\nArtista: {current.data[1]}\nAño: {current.data[2]}\nGenero: {current.data[3]}")
@@ -70,7 +70,7 @@ class Linked_list:
             current = current.next
             position += 1
 
-        print(f"La cancion '{titulo}' no fue encontrada")
+        print(f"La cancion o artista '{titulo}' no fue encontrado")
         return False
 
     def delete_at(self, position):
@@ -158,7 +158,7 @@ while True:
         new_list.insert_last([titulo, artista, anio, genero])
     elif opcion == "2":
         print("Buscar cancion")
-        titulo = input("Ingrese el titulo de la cancion a buscar: ")
+        titulo = input("Ingrese el titulo o el nombre del artista a buscar: ")
         new_list.search_song(titulo)
     elif opcion == "3":
         print("Mostrar canciones")
